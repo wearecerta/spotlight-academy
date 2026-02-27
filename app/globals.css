@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ===============================
+   BASE
+   =============================== */
+body {
+  font-family: var(--font-secondary, system-ui);
+  background-color: var(--spotlight-bg);
+}
+
+/* ===============================
+   ROOT TOKENS
+   =============================== */
+:root {
+  /* ===============================
+     FONT FAMILIES
+     =============================== */
+  --font-primary: var(--font-dm-sans, "DM Sans");
+  --font-secondary: var(--font-dm-sans, "DM Sans");
+  --font-accent: var(--font-shadows-into-light, "Shadows Into Light");
+
+  /* ===============================
+     COLORS — SPOTLIGHT SYSTEM
+     =============================== */
+  --spotlight-blue: #0063d1;
+  --spotlight-light-gray: #c6cbe1;
+  --spotlight-black: #0c0c0e;
+  --spotlight-dark-gray: #323852;
+  --spotlight-bg: #f5f6fa;
+
+  --color-background: var(--spotlight-bg);
+  --color-foreground: var(--spotlight-black);
+
+  /* ===============================
+     BODY TEXT
+     =============================== */
+  --body-large-size: 1.25rem; /* 20px */
+  --body-large-weight: 400;
+  --body-large-line: 150%;
+
+  --body-medium-size: 1rem; /* 16px */
+  --body-medium-weight: 400;
+  --body-medium-line: 150%;
+
+  --body-small-size: 0.875rem; /* 14px */
+  --body-small-weight: 400;
+  --body-small-line: 150%;
+
+  /* ===============================
+     DESKTOP HEADINGS
+     =============================== */
+  --h1-size: 8.75rem; /* 140px */
+  --h1-weight: 700;
+  --h1-line: 100%;
+  --h1-spacing: -0.04em;
+
+  --h2-size: 7rem; /* 112px */
+  --h2-weight: 600;
+  --h2-line: 110%;
+  --h2-spacing: -0.04em;
+
+  --h3-size: 4rem; /* 64px */
+  --h3-weight: 600;
+  --h3-line: 120%;
+  --h3-spacing: -0.04em;
+
+  --h4-size: 2.5rem; /* 40px */
+  --h4-weight: 500;
+  --h4-line: 120%;
+  --h4-spacing: -0.04em;
+
+  /* ===============================
+     ACCENT TEXT
+     =============================== */
+  --accent-large-size: 5.75rem; /* 92px */
+  --accent-medium-size: 3rem; /* 48px */
+  --accent-small-size: 2rem; /* 32px */
+  --accent-line: auto;
+  --accent-spacing: 0.02em;
+
+  /* ===============================
+     SPACING — DESKTOP
+     =============================== */
+  --space-xxs: 0.5rem; /* 8px */
+  --space-xs: 1rem; /* 16px */
+  --space-sm: 1.25rem; /* 20px */
+  --space-lg: 2rem; /* 32px */
+  --space-xl: 3rem; /* 48px */
+  --space-xxl: 4rem; /* 64px */
+  --space-xxxl: 5rem; /* 80px */
+
+  --radius-small: 16px;
+  --radius-medium: 48px;
+  --radius-large: 80px;
+
+  /* ===============================
+     SECTION MARGINS — DESKTOP
+     =============================== */
+  --section-margin-x: 7.5rem; /* 120px */
+  --section-margin-y: 7.5rem; /* 120px */
+}
+
+/* ===============================
+   MOBILE OVERRIDES (≤768px)
+   =============================== */
+@media (max-width: 768px) {
+  :root {
+    /* ===============================
+       HEADINGS — MOBILE
+       =============================== */
+    --h1-size: 4rem; /* 64px */
+    --h2-size: 3.5rem; /* 56px */
+    --h3-size: 2.5rem; /* 40px */
+    --h4-size: 2rem; /* 32px */
+
+    /* ===============================
+       ACCENT — MOBILE
+       =============================== */
+    --accent-large-size: 3.5rem; /* 56px */
+    --accent-medium-size: 2rem; /* 32px */
+    --accent-small-size: 1.5rem; /* 24px */
+
+    /* ===============================
+       SPACING — MOBILE
+       =============================== */
+    --space-lg: 1.5rem; /* 24px */
+    --space-xl: 2rem; /* 32px */
+    --space-xxl: 2.5rem; /* 40px */
+    --space-xxxl: 3rem; /* 48px */
+
+    --radius-small: 16px;
+    --radius-medium: 32px;
+    --radius-large: 40px;
+
+    /* ===============================
+       SECTION MARGINS — MOBILE
+       =============================== */
+    --section-margin-x: 1.5rem; /* 24px */
+    --section-margin-y: 3rem; /* 48px */
+  }
+}
+
+@theme inline {
+  --font-dm-sans: var(--font-primary);
+  --font-accent: var(--font-accent);
+}
