@@ -3,129 +3,249 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useMediaQuery } from "react-responsive";
-
-
-const cardData=[
-  {
-    title:"Learn With Purpose",
-    descriptions:"We don’t believe in passive learning. Every lesson is designed to help you apply real skills, solve real problems, and move closer to your goals with confidence.",
-    bgImg:"/assets/card1bg.svg",
-    text:"white"
-  },
-    {
-    title:"Mentorship That Matters",
-    descriptions:"You’re not learning alone. Our mentors guide, challenge, and support you throughout your journey so you grow faster and smarter.",
-        bgImg:"/assets/card2bg.svg",
-            text:"white"
-
-
-  },
-    {
-    title:"Skills for the Real World",
-    descriptions:"We focus on practical knowledge that employers actually value. What you learn here is meant to be used, not just remembered.",
-        bgImg:"/assets/card3bg.svg",
-            text:"black"
-
-
-  },
-  {
-    title:"A Community That Pushes You Forward",
-    descriptions:"Surround yourself with people who are learning, building, and improving just like you. Growth happens faster when you’re not alone.",
-        bgImg:"/assets/card4bg.svg",
-            text:"black"
-
-
-  },
-]
 
 gsap.registerPlugin(ScrollTrigger);
 
+const cardData = [
+  {
+    title: "Learn with Purpose",
+    descriptions:
+      "We don’t believe in passive learning. Every lesson is designed to help you apply real skills, solve real problems, and move closer to your goals with confidence.",
+    image: "/featuresCardImg1.jpg",
+    icon: (
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 82 82"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0"
+      >
+        <rect width="81.8304" height="81.8304" rx="40.9152" fill="#0063D1" />
+        <g clipPath="url(#clip0_1317_7617)">
+          <path
+            d="M40.227 43.922L39.9268 48.2263L40.9153 48.2273C49.2705 48.2273 54.8559 48.006 58.0742 47.8198C60.7523 47.6657 63.0112 45.7364 63.3339 42.9646C63.5874 40.7905 63.8272 37.5547 63.8272 33.1159C63.8272 28.677 63.5864 25.4422 63.3339 23.2671C63.0122 20.4953 60.7523 18.566 58.0742 18.4119C54.8559 18.2257 49.2705 18.0044 40.9153 18.0044C38.6697 18.005 36.6208 18.0193 34.7684 18.0473C36.0583 18.8887 37.1177 20.0388 37.8506 21.3933C38.5835 22.7478 38.9667 24.2638 38.9655 25.8039C38.9655 27.6075 38.4488 29.2922 37.5567 30.7165C40.2573 30.7653 42.9432 30.8657 45.5355 31.0139C47.0847 31.1026 49.3982 32.0581 49.9666 34.6562C50.2104 35.7647 50.2864 37.2154 49.9559 39.0239C49.5142 41.4369 47.5225 42.9305 45.5034 43.2045L40.227 43.922ZM29.7036 32.1409C28.0229 32.1409 26.4111 31.4733 25.2226 30.2848C24.0342 29.0964 23.3666 27.4845 23.3666 25.8039C23.3666 24.1232 24.0342 22.5113 25.2226 21.3229C26.4111 20.1344 28.0229 19.4668 29.7036 19.4668C31.3843 19.4668 32.9962 20.1344 34.1846 21.3229C35.373 22.5113 36.0407 24.1232 36.0407 25.8039C36.0407 27.4845 35.373 29.0964 34.1846 30.2848C32.9962 31.4733 31.3843 32.1409 29.7036 32.1409ZM45.3688 33.9348C38.361 33.5321 30.66 33.4961 23.8599 33.8276C21.9324 33.9202 20.3072 35.2978 19.9767 37.2164C19.5799 39.5182 19.1002 42.9968 18.9989 46.7932C18.9706 47.8637 19.6862 48.824 20.7957 48.9741C21.2315 49.0336 21.7755 49.093 22.4413 49.1437C22.7046 49.1632 22.9035 49.3738 22.9132 49.6224L23.2798 59.519C23.3393 61.113 24.5043 62.4779 26.1276 62.6485C26.4168 62.6791 26.7232 62.7077 27.0469 62.7343C27.8746 62.8026 28.5678 62.1581 28.6 61.345L28.9363 52.596C28.9411 52.4699 28.9946 52.3507 29.0855 52.2632C29.1764 52.1758 29.2977 52.1269 29.4238 52.127H29.9844C30.1104 52.1269 30.2315 52.1756 30.3224 52.2629C30.4132 52.3501 30.4668 52.4691 30.4719 52.595L30.8082 61.3597C30.8148 61.5536 30.8604 61.7442 30.9424 61.9201C31.0244 62.096 31.141 62.2536 31.2852 62.3834C31.4295 62.5132 31.5984 62.6125 31.782 62.6755C31.9656 62.7385 32.1599 62.7638 32.3535 62.7499C32.7064 62.722 33.0382 62.6927 33.3489 62.6622C34.9351 62.5003 36.0904 61.1929 36.1986 59.6408L37.4465 41.7411C37.4543 41.6291 37.5004 41.5233 37.5771 41.4414C37.6539 41.3595 37.7565 41.3066 37.8677 41.2916L45.1095 40.307C46.0571 40.1783 46.8966 39.4948 47.0789 38.4985C47.345 37.0458 47.2651 35.988 47.1101 35.2812C46.918 34.4018 46.1156 33.9777 45.3688 33.9348Z"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1317_7617">
+            <rect
+              width="46.7968"
+              height="46.7968"
+              fill="white"
+              transform="translate(17.5168 17.5168)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+  },
+  {
+    title: "Mentorship that Matters",
+    descriptions:
+      "You’re not learning alone. Our mentors guide, challenge, and support you throughout your journey so you grow faster and smarter.",
+    image: "/featuresCardImg2.jpg",
+    icon: (
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 87 87"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0"
+      >
+        <rect
+          x="4.68363"
+          width="81.8304"
+          height="81.8304"
+          rx="40.9152"
+          transform="rotate(3.28117 4.68363 0)"
+          fill="#0063D1"
+        />
+        <g clipPath="url(#clip0_1317_7626)">
+          <path
+            d="M33.3412 50.7899C33.141 50.7784 32.9391 50.7966 32.7445 50.8484C31.6384 51.143 30.4835 51.3064 29.2814 51.2375C28.0793 51.1686 26.9506 50.8742 25.8846 50.4551C25.6972 50.3814 25.4995 50.3403 25.2993 50.3288C20.1005 50.0308 15.644 54.0684 15.3697 59.3375C15.2538 61.5642 16.9598 63.4581 19.1604 63.5843L37.925 64.6601C40.1256 64.7862 42.0369 63.0996 42.1762 60.8743C42.5058 55.6084 38.54 51.0879 33.3412 50.7899ZM29.4758 47.8468C33.9173 48.1014 37.7266 44.6645 37.9843 40.1701C38.2419 35.6757 34.8503 31.826 30.4088 31.5713C25.9673 31.3167 22.158 34.7536 21.9003 39.248C21.6427 43.7424 25.0343 47.5921 29.4758 47.8468ZM67.2197 22.7957L35.0519 20.9516C32.8345 20.8244 30.9227 22.6071 30.7899 24.9247L30.5643 28.8588C32.5262 28.9712 34.3094 29.6501 35.8391 30.675L36.0812 26.4536L65.5683 28.1441L64.1687 52.5572L58.8074 52.2498L59.1184 46.8247L48.3958 46.21L48.0848 51.6351L41.6982 51.269C43.2171 52.7755 44.2844 54.7111 44.712 56.8847L65.198 58.0592C67.4154 58.1863 69.3271 56.4036 69.46 54.0861L70.9997 27.2299C71.1325 24.9124 69.4371 22.9229 67.2197 22.7957Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_1317_7626">
+            <rect
+              width="53.7012"
+              height="43.4724"
+              fill="white"
+              transform="translate(17.6275 19.9526) rotate(3.28117)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    ),
+  },
+  {
+    title: "Skills for the Real World",
+    descriptions:
+      "We focus on practical knowledge that employers actually value. What you learn here is meant to be used, not just remembered.",
+    image: "/featuresCardImg3.jpg",
+    icon: (
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 86 86"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0"
+      >
+        <rect
+          y="3.92922"
+          width="81.8304"
+          height="81.8304"
+          rx="40.9152"
+          transform="rotate(-2.75221 0 3.92922)"
+          fill="#0063D1"
+        />
+        <path
+          d="M43.3935 23.8798C43.3749 23.4924 43.2031 23.1283 42.916 22.8675C42.6289 22.6067 42.25 22.4707 41.8626 22.4893C41.4752 22.5079 41.1111 22.6797 40.8503 22.9668C40.5895 23.2539 40.4535 23.6328 40.4721 24.0202L40.6107 26.9027C40.6293 27.2901 40.8011 27.6543 41.0882 27.915C41.3753 28.1758 41.7542 28.3118 42.1416 28.2932C42.529 28.2746 42.8931 28.1028 43.1539 27.8157C43.4147 27.5286 43.5507 27.1497 43.5321 26.7623L43.3935 23.8798ZM54.0959 38.9627C53.6141 37.404 52.8063 35.9656 51.7262 34.743C50.6543 33.511 49.3365 32.517 47.8574 31.8251C46.3821 31.1389 44.7835 30.7576 43.1574 30.704C41.5272 30.6601 39.9057 30.9575 38.3972 31.5771C36.8798 32.1894 35.5077 33.1133 34.3695 34.2889C33.2433 35.4451 32.36 36.8151 31.7717 38.318C31.1994 39.8429 30.9519 41.4705 31.0449 43.0966C31.0901 44.9778 31.5816 46.8212 32.4791 48.4751C33.3766 50.129 34.6542 51.5459 36.2068 52.6091L36.9193 53.219C37.5326 53.7947 37.5326 53.7947 37.5778 55.1395L37.6077 55.7627C37.605 56.1948 37.692 56.6227 37.8633 57.0193C38.0205 57.4451 38.281 57.8289 38.6197 58.1347C38.775 58.2795 38.9439 58.408 39.1263 58.5203L39.2199 60.4679C39.2048 60.8227 39.2601 61.1769 39.3826 61.5102C39.505 61.8435 39.6922 62.1492 39.9334 62.4098C40.1746 62.6704 40.4649 62.8807 40.7878 63.0286C41.1106 63.1765 41.4595 63.259 41.8143 63.2714L45.7096 63.0841C46.4221 62.9902 47.0681 62.6172 47.5056 62.047C47.9431 61.4769 48.1363 60.7563 48.0426 60.0438L47.949 58.0962C48.1191 57.9683 48.2756 57.8234 48.4162 57.6638C48.7065 57.3258 48.9216 56.9289 49.0436 56.5014C49.173 56.0828 49.2182 55.6427 49.1766 55.2066L49.1419 54.486C49.0904 53.4148 49.0904 53.4148 49.6614 52.7041L50.3687 51.9868C52.7724 49.9248 54.266 46.9982 54.5256 43.8419C54.7343 42.2035 54.5877 40.5394 54.0959 38.9627ZM45.2167 60.1406L42.1395 60.2885L42.0805 59.0615L45.1577 58.9136L45.2167 60.1406ZM42.6894 39.6477C42.054 39.6783 41.4569 39.9599 41.0292 40.4308C40.6015 40.9016 40.3784 41.5231 40.409 42.1584C40.4338 42.675 40.2524 43.1802 39.9047 43.563C39.5571 43.9459 39.0715 44.1749 38.555 44.1997C38.0384 44.2245 37.5332 44.0431 37.1504 43.6955C36.7676 43.3478 36.5386 42.8622 36.5137 42.3457C36.4688 41.5184 36.5885 40.6904 36.8661 39.9097C37.1436 39.129 37.5733 38.4112 38.1304 37.7979C38.6874 37.1846 39.3607 36.6879 40.1112 36.3368C40.8616 35.9857 41.6743 35.7871 42.5021 35.7525C43.0187 35.7277 43.5239 35.909 43.9067 36.2567C44.2895 36.6044 44.5185 37.0899 44.5434 37.6065C44.5682 38.123 44.3868 38.6283 44.0391 39.0111C43.6914 39.3939 43.2059 39.6229 42.6894 39.6477ZM60.7636 43.6591L57.1995 43.8305C56.8121 43.8491 56.4331 43.7131 56.146 43.4523C55.8589 43.1915 55.6872 42.8274 55.6685 42.44C55.6499 42.0526 55.786 41.6736 56.0467 41.3865C56.3075 41.0994 56.6716 40.9277 57.059 40.9091L60.6232 40.7377C61.0106 40.7191 61.3895 40.8551 61.6766 41.1159C61.9637 41.3767 62.1355 41.7408 62.1541 42.1282C62.1727 42.5156 62.0367 42.8946 61.7759 43.1817C61.5152 43.4688 61.151 43.6405 60.7636 43.6591ZM53.0337 32.2985C52.8418 32.3086 52.6499 32.2804 52.4691 32.2153C52.2883 32.1502 52.1223 32.0497 51.9809 31.9197C51.6942 31.6589 51.5227 31.2951 51.5041 30.908C51.4854 30.5209 51.6212 30.1422 51.8816 29.8552L54.2918 27.2016C54.5563 26.9302 54.9158 26.7722 55.2945 26.7607C55.6733 26.7491 56.0417 26.8851 56.3222 27.1398C56.6027 27.3946 56.7734 27.7483 56.7982 28.1264C56.8231 28.5045 56.7002 28.8775 56.4555 29.1668L54.0453 31.8204C53.9178 31.9643 53.7623 32.0809 53.5885 32.163C53.4146 32.2452 53.2259 32.2913 53.0337 32.2985ZM58.6779 56.3115C58.2922 56.3198 57.9171 56.1848 57.6251 55.9327L54.9715 53.5225C54.7922 53.3611 54.6556 53.1579 54.5739 52.9309C54.4922 52.7039 54.468 52.4603 54.5033 52.2216C54.5386 51.983 54.6323 51.7568 54.7762 51.5632C54.9201 51.3696 55.1097 51.2146 55.328 51.112C55.5898 50.9865 55.8835 50.9429 56.1705 50.987C56.4575 51.031 56.7245 51.1606 56.9367 51.3588L59.5903 53.7689C59.7346 53.8966 59.8518 54.0519 59.9351 54.2255C60.0184 54.3992 60.0661 54.5878 60.0754 54.7803C60.0846 54.9727 60.0552 55.165 59.989 55.3459C59.9227 55.5267 59.8209 55.6925 59.6896 55.8334C59.4291 56.1206 59.0652 56.2926 58.6779 56.3115ZM31.7073 33.3237C31.32 33.342 30.9413 33.2057 30.6545 32.9449L28.0009 30.5347C27.7138 30.2715 27.5431 29.9051 27.5262 29.516C27.5093 29.1269 27.6477 28.7471 27.9109 28.46C28.1741 28.173 28.5405 28.0022 28.9296 27.9853C29.3187 27.9685 29.6985 28.1068 29.9856 28.37L32.6197 30.7812C32.8335 30.9756 32.985 31.2291 33.0548 31.5096C33.1247 31.7901 33.1099 32.0849 33.0123 32.357C32.9146 32.6291 32.7386 32.8661 32.5063 33.0382C32.274 33.2102 31.996 33.3096 31.7073 33.3237ZM28.412 57.7665C28.2197 57.7813 28.0264 57.7552 27.8449 57.6899C27.6635 57.6246 27.4979 57.5216 27.3591 57.3876C27.0724 57.1269 26.9009 56.763 26.8823 56.3759C26.8637 55.9888 26.9995 55.6102 27.2599 55.3231L29.6701 52.6695C29.9346 52.3982 30.2941 52.2401 30.6728 52.2286C31.0516 52.2171 31.42 52.353 31.7005 52.6078C31.981 52.8626 32.1516 53.2163 32.1765 53.5944C32.2014 53.9725 32.0785 54.3455 31.8338 54.6348L29.444 57.3069C29.1695 57.5837 28.8013 57.7476 28.412 57.7665ZM28.6279 45.204L25.0638 45.3753C24.6764 45.3939 24.2975 45.2579 24.0104 44.9971C23.7233 44.7364 23.5515 44.3722 23.5329 43.9848C23.5143 43.5974 23.6503 43.2185 23.9111 42.9314C24.1718 42.6443 24.536 42.4725 24.9234 42.4539L28.4875 42.2826C28.8749 42.2639 29.2539 42.4 29.541 42.6607C29.8281 42.9215 29.9998 43.2856 30.0184 43.673C30.0371 44.0604 29.901 44.4394 29.6403 44.7265C29.3795 45.0136 29.0154 45.1854 28.6279 45.204Z"
+          fill="white"
+        />
+      </svg>
+    ),
+  },
+  {
+    title: "A Community That Pushes You Forward",
+    descriptions:
+      "Surround yourself with people who are learning, building, and improving just like you. Growth happens faster when you’re not alone.",
+    image: "/featuresCardImg4.jpg",
+    icon: (
+      <svg
+        width="68"
+        height="68"
+        viewBox="0 0 85 85"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0"
+      >
+        <rect
+          x="2.48737"
+          width="81.8304"
+          height="81.8304"
+          rx="40.9152"
+          transform="rotate(1.74187 2.48737 0)"
+          fill="#0063D1"
+        />
+        <path
+          d="M35.6446 31.213C35.6719 30.3172 35.8753 29.4356 36.2433 28.6184C36.6112 27.8012 37.1366 27.0645 37.7892 26.4503C38.4419 25.8362 39.2092 25.3566 40.0472 25.0389C40.8853 24.7213 41.7776 24.5718 42.6734 24.5991C43.5692 24.6263 44.4509 24.8297 45.2681 25.1977C46.0853 25.5657 46.822 26.091 47.4361 26.7437C48.0503 27.3964 48.5299 28.1636 48.8475 29.0017C49.1652 29.8397 49.3146 30.7321 49.2874 31.6279C49.2324 33.437 48.4609 35.1502 47.1428 36.3906C45.8246 37.6309 44.0677 38.2968 42.2586 38.2418C40.4494 38.1868 38.7362 37.4154 37.4959 36.0972C36.2555 34.779 35.5896 33.0221 35.6446 31.213ZM27.5821 39.7463C28.8743 39.7856 30.1292 39.3099 31.0708 38.4239C32.0123 37.538 32.5633 36.3143 32.6026 35.022C32.6419 33.7298 32.1663 32.4749 31.2803 31.5333C30.3944 30.5918 29.1706 30.0407 27.8784 30.0014C26.5862 29.9621 25.3312 30.4378 24.3897 31.3238C23.4481 32.2097 22.8971 33.4334 22.8578 34.7257C22.8185 36.0179 23.2942 37.2729 24.1801 38.2144C25.0661 39.1559 26.2898 39.707 27.5821 39.7463ZM61.8371 35.9111C61.7978 37.2033 61.2468 38.427 60.3052 39.313C59.3637 40.199 58.1088 40.6746 56.8165 40.6353C55.5243 40.596 54.3006 40.045 53.4146 39.1034C52.5286 38.1619 52.053 36.907 52.0923 35.6147C52.1316 34.3225 52.6826 33.0988 53.6242 32.2128C54.5657 31.3268 55.8206 30.8512 57.1129 30.8905C58.4051 30.9298 59.6288 31.4808 60.5148 32.4224C61.4008 33.3639 61.8764 34.6188 61.8371 35.9111ZM39.2166 42.0508C36.527 41.9691 34.2778 44.0855 34.196 46.7751L34.0478 51.6475C33.9849 53.7151 34.746 55.723 36.1635 57.2294C37.5811 58.7359 39.539 59.6176 41.6066 59.6804C43.6742 59.7433 45.6821 58.9823 47.1885 57.5647C48.695 56.1472 49.5767 54.1892 49.6395 52.1217L49.7877 47.2492C49.8695 44.5597 47.753 42.3104 45.0635 42.2287L39.2166 42.0508ZM30.2981 46.6565C30.3323 45.53 30.5755 44.4606 30.9953 43.4863L26.1578 44.6267C24.9002 44.9232 23.8117 45.7068 23.1315 46.8055C22.4514 47.9041 22.2353 49.2278 22.5307 50.4857L23.201 53.3347C23.4359 54.3318 23.865 55.2728 24.4637 56.1041C25.0624 56.9353 25.819 57.6404 26.6903 58.1792C27.5615 58.718 28.5304 59.0799 29.5415 59.2442C30.5526 59.4085 31.5862 59.372 32.5833 59.1368L32.6501 59.1193C30.9516 56.9611 30.0665 54.2741 30.1499 51.529L30.2981 46.6565ZM53.5375 52.2402C53.4506 55.0974 52.3458 57.6856 50.5805 59.6685L50.6424 59.686C52.6229 60.2813 54.7587 60.0657 56.5803 59.0866C58.4018 58.1074 59.76 56.4449 60.356 54.4646L61.1982 51.6616C61.5694 50.424 61.4342 49.0896 60.8221 47.9517C60.2099 46.8137 59.1711 45.9654 57.9338 45.593L53.1862 44.1611C53.542 45.1629 53.7198 46.2452 53.6856 47.3678L53.5375 52.2402Z"
+          fill="white"
+        />
+      </svg>
+    ),
+  },
+];
+
 const StackCards = () => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const container = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    const cards = gsap.utils.toArray(".card");
-    
-    // Set initial positions
-    cards.forEach((card: any, i: number) => {
-      gsap.set(card, {
-        y: isMobile? i *15 :i * 30, // Increased spacing between cards
-        scale: 1 - i * 0.03, // More subtle scale difference
-        zIndex: cards.length - i,
-        opacity: 1
+    const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+    if (!cards.length || !containerRef.current) return;
+
+    const ctx = gsap.context(() => {
+      // Set alternating tilt for each card: one negative, one positive (-2deg, +2deg, -2deg, +2deg)
+      cards.forEach((card, i) => {
+        const rot = i % 2 === 0 ? -2 : 2;
+        gsap.set(card, {
+          rotation: rot,
+          transformOrigin: "center top",
+        });
       });
-    });
 
-    // Create the scroll timeline
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container.current,
-        start: "top top",
-        scrub: 1, // Smooth scrubbing
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-      },
-    });
+      // Scale down underlying cards as each subsequent card enters and stacks
+      cards.forEach((card, i) => {
+        if (i < cards.length - 1) {
+          const nextCard = cards[i + 1];
 
-    // Animate cards up one by one
-    cards.forEach((card:any, i:number) => {
-            if (i < cards.length - 1) { // Keep last card visible
+          // Underlying card gently scales down and dims slightly to give authentic 3D depth in the deck
+          gsap.to(card, {
+            ease: "none",
+            scrollTrigger: {
+              trigger: nextCard,
+              start: "top 85%",
+              end: "top 25%",
+              scrub: true,
+            },
+          });
+        }
+      });
+    }, containerRef);
 
-        tl.to(card, {
-          y: isMobile?"-1000":"-200vh", 
-          
-          scale:1.2,
-          duration: 2,
-          ease: "sine.inOut",
-        }, i * 1);}
-      
-    }
-  );
-
- 
-
-
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section className="relative bg-white min-h-screen  overflow-hidden">
-      <div 
-        ref={container} 
-        className="relative h-screen contain-size flex items-center justify-center"
-      >
-        <div className="relative w-[90cqw] h-[60cqh] md:w-[50cqw] md:h-[70cqh]">
-          {cardData.map((card, i) => (
+    <section
+      ref={containerRef}
+      className="relative bg-(--spotlight-bg) pt-12 sm:pt-16 md:pt-20 px-4 sm:px-6 md:px-12 lg:px-16 overflow-visible"
+    >
+      <div className="max-w-[1140px] mx-auto flex flex-col relative pb-8 sm:pb-12 md:pb-16">
+        {cardData.map((card, i) => {
+          const rot = i % 2 === 0 ? -2 : 2;
+          return (
             <div
               key={i}
-              className="card absolute top-0 left-0 w-full h-full flex flex-col justify-center items-start bg-contain bg-center bg-no-repeat"
+              className={`w-full sticky ${
+                i === cardData.length - 1
+                  ? "mb-[35vh] sm:mb-[45vh] md:mb-[55vh]"
+                  : "mb-[30vh] sm:mb-[38vh] md:mb-[46vh]"
+              }`}
               style={{
-                transformOrigin: 'center center',
-                willChange: 'transform, opacity',
-                backgroundImage:`url(${card.bgImg})`
+                top: `calc(8vh + ${i * 26}px)`,
+                zIndex: i + 10,
               }}
             >
-              <div className={`w-[70cqw] md:w-[30cqw]  mx-auto flex flex-col gap-[2cqw] text-${card.text}`} >
+              <div
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                style={{
+                  transform: `rotate(${rot}deg)`,
+                  transformOrigin: "center top",
+                }}
+                className="w-full bg-[#0076FA] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col md:flex-row gap-6 sm:gap-8 lg:gap-10 items-center justify-between border border-white/20 overflow-hidden"
+              >
+              {/* Left Column: Icon + Text */}
+              <div className="flex-1 flex flex-col justify-between self-stretch gap-5 sm:gap-7 md:gap-8">
+                {/* Icon */}
+                <div>{card.icon}</div>
 
-              <h3 className="font-semibold text-[7cqw] md:text-[2.5cqw] tracking-[-4%] leading-(--h3-line)">
-                {card.title||""}
-              </h3>
-              <p className="text-[3.5cqw] md:text-[1cqw] leading-[150%]">
-               {card.descriptions||""}
-              </p>
+                {/* Title & Description */}
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <h3 className="text-white font-dm-sans font-bold text-2xl sm:text-3xl md:text-4xl lg:text-[2.5rem] tracking-tight leading-[1.15]">
+                    {card.title}
+                  </h3>
+                  <p className="text-white/90 font-dm-sans text-sm sm:text-base md:text-[1.05rem] leading-relaxed max-w-lg font-normal">
+                    {card.descriptions}
+                  </p>
+                </div>
               </div>
-          
+
+              {/* Right Column: Monochrome Image */}
+              <div className="w-full md:w-[46%] lg:w-[44%] shrink-0 flex items-center justify-center">
+                <div className="w-full overflow-hidden rounded-[18px] sm:rounded-[24px] md:rounded-[28px] aspect-[4/3] sm:aspect-[4/3] md:aspect-[1.18/1]  bg-black/20">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full h-full object-cover grayscale contrast-105"
+                  />
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        );
+      })}
       </div>
-    
     </section>
   );
 };

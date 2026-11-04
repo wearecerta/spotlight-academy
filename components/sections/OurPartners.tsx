@@ -49,8 +49,8 @@ const OurPartners = () => {
     <section className=" bg-white">
       <div className=" px-(--section-margin-x) min-h-screen flex items-center justify-center gap-(--space-xxl) py-(--section-margin-y) flex flex-col items-center ">
         <h2 
-className="flex text-(--spotlight-dark-gray) flex-col gap-[16px] font-dm-sans font-semibold leading-[110%] text-(length:--h2-size) tracking-[-2.24px] md:tracking-[-4%]">
-          Our Partners
+className="flex text-(--spotlight-blue) gap-3  font-dm-sans font-semibold leading-[110%] text-(length:--h2-size) tracking-[-2.24px] md:tracking-[-4%]">
+          Our <span className="text-black">Partners</span>
         </h2> 
 
         <div className="grid w-full  grid-cols-2 md:grid-cols-5 gap-(--space-xxs)">

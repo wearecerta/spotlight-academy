@@ -25,47 +25,60 @@ const faqData = [
 ];
 
 const FAQsection = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (i: any) => {
+  const toggle = (i: number) => {
     setOpenIndex(openIndex === i ? null : i);
   };
 
   return (
-    <section id="faq" className="bg-white">
-      <div className=" mx-auto py-(--section-margin-y) px-(--section-margin-x) rounded-t-(--radius-large) bg-(--spotlight-bg)">
-        <h2 className="flex max-w-360 mx-auto text-(--spotlight-dark-gray) flex-col gap-[16px] font-dm-sans font-semibold leading-[110%] text-(length:--h2-size) tracking-[-2.24px] md:tracking-[-4%]">
+    <section id="faq" className="bg-(--spotlight-bg) py-16 sm:py-24 px-4 sm:px-6 md:px-12 lg:px-16">
+      <div className="max-w-[1040px] mx-auto">
+        {/* Title */}
+        <h2 className="text-center text-(--spotlight-blue) font-dm-sans font-semibold text-4xl sm:text-5xl md:text-6xl tracking-tight mb-10 sm:mb-14">
           FAQ
         </h2>
 
-        <div className="flex flex-col max-w-360 mx-auto">
+        {/* FAQ Pill Items */}
+        <div className="flex flex-col gap-3.5 sm:gap-4 md:gap-5">
           {faqData.map((faq, i) => {
             const open = openIndex === i;
 
             return (
-              <div key={i} className="border-b border-(--spotlight-light-gray)">
-                {/* Question */}
+              <div
+                key={i}
+                className={`w-full bg-white transition-all duration-300 shadow-[0_2px_12px_rgba(0,0,0,0.03)] border border-black/[0.04] overflow-hidden ${
+                  open ? "rounded-[24px] sm:rounded-[32px]" : "rounded-full"
+                }`}
+              >
+                {/* Question Row */}
                 <button
+                  type="button"
                   onClick={() => toggle(i)}
-                  className="w-full flex justify-between text-(length:--body-medium-size)  items-center py-[40px] text-left"
+                  className="w-full flex justify-between items-center text-left px-6 sm:px-8 md:px-10 py-4 sm:py-5 cursor-pointer select-none"
+                  aria-expanded={open}
                 >
-                  <p>{faq.question}</p>
+                  <span className="font-dm-sans font-medium text-sm sm:text-base md:text-[1.05rem] text-[#1A1A1A] pr-4">
+                    {faq.question}
+                  </span>
 
-                  {/* Icon */}
-                  <div className="bg-(--spotlight-blue)  p-[10px] flex justify-center items-center rounded-full shrink-0">
+                  {/* Plus / Close Icon */}
+                  <div
+                    className={`w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#2A3DF7] flex items-center justify-center shrink-0 transition-transform duration-300 shadow-sm ${
+                      open ? "rotate-45" : ""
+                    }`}
+                  >
                     <svg
-                      className={`transition-transform duration-300 ${
-                        open ? "rotate-45" : ""
-                      }`}
-                      width="28"
-                      height="28"
-                      viewBox="0 0 28 28"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
                       fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <path
-                        d="M27.025 13.825H0.625M13.825 27.025V0.625"
+                        d="M8 2.5V13.5M2.5 8H13.5"
                         stroke="white"
-                        strokeWidth="1.25"
+                        strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />
@@ -73,14 +86,16 @@ const FAQsection = () => {
                   </div>
                 </button>
 
-                {/* Answer */}
+                {/* Answer Accordion */}
                 <div
-                  className={`grid transition-all duration-300 ${
-                    open ? "grid-rows-[1fr] pb-[40px]" : "grid-rows-[0fr]"
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >
-                  <div className="overflow-hidden px-(--space-xs) text-(--spotlight-dark-gray)/80 max-w-[700px]">
-                    {faq.answer}
+                  <div className="overflow-hidden">
+                    <p className="px-6 sm:px-8 md:px-10 pb-5 sm:pb-6 pt-1 text-black/70 font-dm-sans text-sm sm:text-base leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </div>

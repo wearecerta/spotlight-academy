@@ -15,11 +15,11 @@ const Home = () => {
       <HeroSection/>
       <Courses/>
       <WeHelpSection/>
-      <WhoAreWe/>
+      {/* <WhoAreWe/> */}
       <StackCards/>
       <LearningSteps/>
-      <InfoSection/>
       <OurPartners/>
+      <InfoSection/>
       <FAQsection/>
     </main>
   )
