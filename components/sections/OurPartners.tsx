@@ -30,10 +30,10 @@ const partners = [
     name: "Misrak Poli tech",
     logo: "/logo/misrak.svg",
   },
-  {
-    name: "FTVET",
-    logo: "/logo/ftvet.svg",
-  },
+  // {
+  //   name: "FTVET",
+  //   logo: "/logo/ftvet.svg",
+  // },
   {
     name: "lg koica",
     logo: "/logo/lg.svg",

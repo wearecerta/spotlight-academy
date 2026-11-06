@@ -22,7 +22,7 @@ text="Your learning journey in 4 simple steps"
             <div className="flex flex-col flex-1 border md:flex-row  ">
 
               <Reveal className="flex flex-1 z-10 h-fit flex-col gap-[18px] md:gap-[28px] shadow-[-16px_16px_0_0_#0063D1] pt-(--space-lg) pb-(--space-xl) px-(--space-sm) rounded-(--radius-small) bg-white">
-                <p className="font-accent tracking-[2%] text-(length:--accent-small-size)">
+                <p className="font-semibold tracking-[2%] text-(length:--accent-small-size)">
                   Sign Up
                 </p>
                 <p className="text-(length:--body-large-size)">
@@ -32,7 +32,7 @@ text="Your learning journey in 4 simple steps"
               </Reveal>
 
               <Reveal className="flex flex-1 md:rotate-12 mt-(--space-xxxl) md:mt-[120px] flex-col gap-[18px] md:gap-[28px] shadow-[-16px_16px_0_0_#0063D1] pt-(--space-lg) pb-(--space-xl) px-(--space-sm) rounded-(--radius-small) bg-white">
-                <p className="font-accent tracking-[2%] text-(length:--accent-small-size)">
+                <p className="font-semibold tracking-[2%] text-(length:--accent-small-size)">
                   Choose Your Course{" "}
                 </p>
                 <p className="text-(length:--body-large-size)">
@@ -70,7 +70,7 @@ text="Your learning journey in 4 simple steps"
             <div className="flex flex-col pl-(--section-margin-x) md:p-0 md:flex-row flex-1 ">
 
               <Reveal className="flex flex-1 md:rotate-12 h-fit flex-col gap-[18px] md:gap-[28px] shadow-[-16px_16px_0_0_#0063D1] pt-(--space-lg) pb-(--space-xl) px-(--space-sm) rounded-(--radius-small) bg-white">
-                <p className="font-accent tracking-[2%] text-(length:--accent-small-size)">
+                <p className="font-semibold tracking-[2%] text-(length:--accent-small-size)">
                   Learn & Practice
                 </p>
                 <p className="text-(length:--body-large-size)">
@@ -80,7 +80,7 @@ text="Your learning journey in 4 simple steps"
               </Reveal>
               <Reveal className="flex flex-1 mt-(--space-xxxl) md:mt-[120px] flex-col gap-[18px] md:gap-[28px] shadow-[-16px_16px_0_0_#0063D1] pt-(--space-lg) pb-(--space-xl) px-(--space-sm) rounded-(--radius-small) bg-white">
 
-                <p className="font-accent tracking-[2%] text-(length:--accent-small-size)">
+                <p className="font-semibold tracking-[2%] text-(length:--accent-small-size)">
                   Choose Your Course{" "}
                 </p>
                 <p className="text-(length:--body-large-size)">
